@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@
           crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700|Open+Sans:400,600,700&amp;subset=latin-ext"
           rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="<c:url value="/css/style.css" />">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
@@ -30,7 +31,9 @@
             Your Drink
         </a>
         <div class="d-flex justify-content-around">
-            <h4 class="text-light mr-3">${user.nick}</h4>
+            <h4 class="text-light mr-3"><sec:authorize access="isAuthenticated()">
+                <p class="text-light mr-3"><sec:authentication property="principal.username"/>
+                </p></sec:authorize></span></h4>
             <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
         </div>
     </nav>

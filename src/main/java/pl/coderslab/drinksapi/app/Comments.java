@@ -1,5 +1,8 @@
 package pl.coderslab.drinksapi.app;
 
+import pl.coderslab.drinksapi.users.AppUser;
+
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +18,6 @@ public class Comments {
     private Drink drink;
 
     @ManyToOne
-    private User user;
+    private AppUser user;
 
 }

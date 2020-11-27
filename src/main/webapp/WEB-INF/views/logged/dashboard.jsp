@@ -19,7 +19,7 @@
             <div class="dashboard-header m-4">
                 <div class="dashboard-menu">
                     <div class="menu-item border-dashed">
-                        <a href="<c:url value="/add" />">
+                        <a href="<c:url value="/logged/add" />">
                             <i class="far fa-plus-square icon-plus-square"></i>
                             <span class="title">dodaj drink</span>
                         </a>

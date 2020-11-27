@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="loggedHeader.jsp" %>
 
@@ -10,7 +11,7 @@
             <div class="dashboard-content border-dashed p-3 m-4 view-height">
                 <!-- fix action, method -->
                 <!-- add name attribute for all inputs -->
-                <form action="/apprecipeadd" method="post">
+                <form:form modelAttribute="drink" method="post">
                     <div class="mt-4 ml-4 mr-4">
                         <div class="row border-bottom border-3">
                             <div class="col"><h3 class="color-header text-uppercase">Nowy drink</h3></div>
@@ -24,18 +25,18 @@
                             <tr class="d-flex">
                                 <th scope="row" class="col-2">Nazwa </th>
                                 <td class="col-7">
-
-                                    <input name="name" class="w-100 p-1" value="">
+                                    <form:input path="name" placeholder="nazwa"/>
+<%--                                    <input name="name" class="w-100 p-1" value="nazwa">--%>
                                 </td>
                             </tr>
                             <tr class="d-flex">
                                 <th scope="row" class="col-2">Opis </th>
-                                <td class="col-7"><textarea class="w-100 p-1" rows="5" name="description"></textarea></td>
+                                <td class="col-7"><form:textarea path="description" class="w-100 p-1" rows="5"></form:textarea></td>
                             </tr>
                             <tr class="d-flex">
                                 <th scope="row" class="col-2">Przygotowanie </th>
-                                <td class="col-3">
-                                    <input class="p-1" type="number" min="0" value="" name="preparationTime">
+                                <td class="col-2">
+                                    <form:textarea path="preparation" class="w-100 p-1"  min="0" rows="10"></form:textarea>
                                 </td>
                             </tr>
                             </tbody>
@@ -44,7 +45,7 @@
 
                         </div>
 
-                </form>
+                </form:form>
             </div>
         </div>
     </div>

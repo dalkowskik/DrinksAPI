@@ -12,7 +12,7 @@
 
                     <h1 class="text-color-darker">Rejestracja</h1>
                     <div class="form-group">
-                        <form:input path="name" placeholder="imię"/>
+                        <form:input path="username" placeholder="imię"/>
 <%--                        <input type="text" class="form-control" id="name" name="name" placeholder="podaj imię">--%>
 
                     </div>

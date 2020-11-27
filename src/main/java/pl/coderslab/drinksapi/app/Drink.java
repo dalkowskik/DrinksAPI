@@ -1,8 +1,9 @@
 package pl.coderslab.drinksapi.app;
 
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.bind.DefaultValue;
+
+
+import pl.coderslab.drinksapi.users.AppUser;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,15 +21,12 @@ public class Drink {
     @NotNull
     private String description;
 
-//value - domyslna wartosc?
-
-
-    private long likes=0;
+    private long likes;
 
     private String preparation;
 
     @ManyToOne
-    private User user;
+    private AppUser user;
 
     @OneToMany
     private List<Comments> coments;
@@ -60,11 +58,11 @@ public class Drink {
         this.likes = likes;
     }
 
-    public User getUser() {
+    public AppUser getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(AppUser user) {
         this.user = user;
     }
 

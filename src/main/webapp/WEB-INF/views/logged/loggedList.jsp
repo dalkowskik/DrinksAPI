@@ -8,20 +8,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <ul class="nav flex-column long-bg">
     <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/dashboard">
+        <a class="nav-link" href="<c:url value="/logged/dashboard" />">
             <span>Pulpit</span>
             <i class="fas fa-angle-right"></i>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/recipes">
+        <a class="nav-link" href="<c:url value="/logged/drinks" />">
             <span>Drinki</span>
             <i class="fas fa-angle-right"></i>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="/editUser">
+        <a class="nav-link" href="<c:url value="/logged/edituser" />">
             <span>Edytuj dane</span>
             <i class="fas fa-angle-right"></i>
         </a>

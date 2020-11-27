@@ -18,11 +18,12 @@
                 <form class="padding-small text-center" method="post" action="http://localhost:8080/login">
                     <h1 class="text-color-darker">Logowanie</h1>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="podaj adres email">
+                        <input type="username" class="form-control" id="email" name="username" placeholder="podaj nazwe urzytkownika">
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" id="password" name="password" placeholder="podaj hasło">
                     </div>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <button class="btn btn-color rounded-0" type="submit">Zaloguj</button>
                 </form>
             </div>

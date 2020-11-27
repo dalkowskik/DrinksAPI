@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="loggedHeader.jsp"%>
 
@@ -8,9 +9,8 @@
 
         <div class="m-4 p-3 width-medium text-color-darker">
             <div class="m-4 border-dashed view-height">
-                <!-- fix action, method -->
-                <!-- add name attribute for all inputs -->
-                <form action="/editUser" method="post">
+
+                <form:form method="post" action="edituser" modelAttribute="userEdit">
                     <div class="mt-4 ml-4 mr-4">
                         <div class="row border-bottom border-3">
                             <div class="col"><h3 class="color-header text-uppercase">Edytuj dane</h3></div>
@@ -25,26 +25,31 @@
                             <tr class="d-flex">
                                 <th scope="row" class="col-2"><h4>Imię</h4></th>
                                 <td class="col-7">
-                                    <input class="w-100 p-1"  name="firstname" value="${admin.firstName}">
+                                    <form:input path="username" class="w-100 p-1" value="${user2.username}" />
                                 </td>
                             </tr>
                             <tr class="d-flex">
                                 <th scope="row" class="col-2"><h4>Nazwisko</h4></th>
                                 <td class="col-7">
-                                    <input class="w-100 p-1" name="lastname" value="${admin.lastName}">
+                                    <form:input path="surName" class="w-100 p-1" value="${user2.surName}"/>
                                 </td>
                             </tr>
                             <tr class="d-flex">
                                 <th scope="row" class="col-2"><h4>Email</h4></th>
                                 <td class="col-3">
-                                    <input class="p-1 w-100" type="text" name="email" value="${admin.email}">
+                                    <form:input path="email" class="p-1 w-100" value="${user2.email}" />
+                                </td>
+                            </tr><tr class="d-flex">
+                                <th scope="row" class="col-2"><h4>Nick</h4></th>
+                                <td class="col-3">
+                                    <form:input path="nick" class="p-1 w-100"  value="${user2.nick}"/>
                                 </td>
                             </tr>
-                            <input name="iduser"  value="${admin.id}" hidden>
+
                             </tbody>
                         </table>
                     </div>
-                </form>
+                </form:form>
             </div>
         </div>
     </div>

@@ -12,4 +12,6 @@ public interface DrinkRepository extends JpaRepository<Drink,Long> {
     @Query("select * from drinks where user_id=?1")
     public List<Drink> findByUserId(long adminId);
 
+    Drink findById(long id);
+
 }
